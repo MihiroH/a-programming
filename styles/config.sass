@@ -1,0 +1,35 @@
+@use "sass:math"
+
+// Color
+$c-blue: #53c0f0
+$c-dark-blue: #edf2f7
+$c-light-blue: #e6f2ff // For retina display.
+
+$c-black: #002b36
+$c-white: #f1f1f1
+$c-pure-white: #fff
+$c-gray: #839496
+
+$c-purple: #be7bf8
+$c-green: #41c498
+$c-orange: #fdb239
+$c-red: #fd3939
+
+// Size
+$sp-design-size: 750
+$sp-size: 768
+$pc-size: $sp-size + 1
+$pc-min-width: 1000
+
+// Font
+@function vw($px, $size: $sp-design-size)
+  @return math.div($px, $size) * 100vw
+
+// Media query
+@mixin sp
+  @media screen and (max-width: #{$sp-size}px)
+    @content
+
+@mixin pc
+  @media screen and (min-width: #{$pc-size}px)
+    @content
