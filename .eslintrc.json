@@ -1,0 +1,35 @@
+{
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "prettier"
+  ],
+  "rules": {
+    "array-bracket-spacing": ["error", "never"],
+    "comma-spacing": ["error", { "before": false, "after": true }],
+    "computed-property-spacing": ["error", "never"],
+    "indent": ["error", 2],
+    "jsx-quotes": ["error", "prefer-double"],
+    "key-spacing": ["error", { "mode": "strict" }],
+    "keyword-spacing": ["error"],
+    "max-len": ["error", {
+      "code": 80,
+      "ignoreTemplateLiterals": true,
+      "ignoreUrls": true
+    }],
+    "no-extra-semi": "error",
+    "no-multi-spaces": "error",
+    "no-multiple-empty-lines": ["error", { "max": 1 }],
+    "no-redeclare": "error",
+    "no-unexpected-multiline": "error",
+    "no-unneeded-ternary": "error",
+    "no-unreachable": "error",
+    "no-var": "error",
+    "quote-props": ["error", "as-needed"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "never", {"beforeStatementContinuationChars": "never"}],
+    "semi-spacing": ["error", {"after": true, "before": false}],
+    "semi-style": ["error", "first"],
+    "space-in-parens": ["error", "never"]
+  }
+}
