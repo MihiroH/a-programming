@@ -6,7 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "npm run check-types && next lint",
+    "lint:fix": "npm run format && next lint --fix",
+    "format": "prettier --write --ignore-path .gitignore './**/*.{js,jsx,ts,tsx}'",
+    "check-types": "tsc --project ./tsconfig.json",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "./**/*.{js,jsx,ts,tsx}": [
+      "bash -c 'npm run lint:fix'",
+      "bash -c 'tsc --project ./tsconfig.json && next lint'"
+    ]
   },
   "dependencies": {
     "next": "11.0.1",
@@ -16,8 +26,16 @@
   },
   "devDependencies": {
     "@types/react": "17.0.16",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
     "eslint": "7.32.0",
     "eslint-config-next": "11.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.24.1",
+    "husky": "^7.0.1",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.3.2",
     "typescript": "4.3.5"
   }
 }
