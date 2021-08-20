@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '@/styles/Top.module.sass'
 
-export default function Top(): JSX.Element {
+const Top: React.VFC = (): JSX.Element => {
   return (
     <>
       <Head>
@@ -13,3 +13,5 @@ export default function Top(): JSX.Element {
     </>
   )
 }
+
+export default Top
