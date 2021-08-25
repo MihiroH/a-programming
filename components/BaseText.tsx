@@ -1,16 +1,9 @@
+import type { Props as BaseProps } from '@/types/BaseText'
 import styles from '@/styles/BaseText.module.sass'
 
-type Props = {
-  tagName?: keyof JSX.IntrinsicElements
-  face?: 'normal' | 'ja' | 'en'
-  weight?: 'r' | 'm' | 'b'
-  className?: string
-  sizeSp: number
-  sizePc: number
-  children: React.ReactNode
-}
+type Props = BaseProps & { tagName?: keyof JSX.IntrinsicElements }
 
-const BaseText: React.VFC<Props> = (props): JSX.Element => {
+const BaseText: React.VFC<Props> = (props) => {
   const Tag = props.tagName
     ? props.tagName
     : ('span' as keyof JSX.IntrinsicElements)
