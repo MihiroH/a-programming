@@ -1,0 +1,27 @@
+.footer
+  width: 100%
+  background-color: #fff
+  padding: 24px 0 23px 0
+  @include sp
+  padding: vw(24) 0
+
+.item
+  font-size: 14px
+  text-align: center
+  color: $c-black
+  @include sp
+    font-size: vw(20)
+
+  &:nth-child(n+2)
+    margin-top: 24px
+    @include sp
+      margin-top: vw(20)
+.copyright
+  display: block
+  margin-top: 59px
+  text-align: center
+  font-size: 12px
+  font-family: 'Fira Code', monospace
+  @include sp
+    font-size: vw(20)
+    margin-top: vw(56)
