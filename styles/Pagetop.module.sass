@@ -1,0 +1,26 @@
+.pageTop
+  display: flex
+  align-items: center
+  flex-direction: column
+  position: fixed
+  bottom: 20px
+  right: 30px
+  @include sp
+    bottom: vw(30)
+    right: vw(20)
+
+.icon
+  width: 27px
+  @include sp
+    width: vw(33.68)
+  svg
+    width: 100%
+    height: auto
+
+.text
+  font-size: 10px
+  margin-top: 4px
+  font-weight: 500
+  @include sp
+    font-size: vw(21)
+    margin-top: vw(4.7)
