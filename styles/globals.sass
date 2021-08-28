@@ -87,3 +87,20 @@ select
 
 svg
   width: 100%
+
+body
+  background: $c-light-blue
+  @include nonRetina
+    background: $c-dark-blue
+
+.pc
+  @include sp
+    display: none !important
+  @include pc
+    display: block
+
+.sp
+  @include sp
+    display: block
+  @include pc
+    display: none !important
