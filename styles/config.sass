@@ -35,7 +35,11 @@ $pc-min-width: 1000
   @media screen and (min-width: #{$pc-size}px)
     @content
 
-<<<<<<< HEAD
+// Non-Retina
+@mixin nonRetina
+  @media screen and (-webkit-max-device-pixel-ratio: 1)
+    @content
+
 // Utils
 @mixin hoverOpacity
   &:active
@@ -44,9 +48,3 @@ $pc-min-width: 1000
   &:hover
     @include pc
       opacity: .8
-=======
-// Non-Retina
-@mixin nonRetina
-  @media screen and (-webkit-max-device-pixel-ratio: 1)
-    @content
->>>>>>> eef3fd7 (Add: global css and styling entire pages background color)
