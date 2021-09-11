@@ -1,0 +1,44 @@
+.wrapper
+  position: relative
+  z-index: 1
+  @include sp
+    padding-bottom: vw(90)
+    width: vw(692)
+  @include pc
+    padding-bottom: 45px
+    width: 720px
+
+.title,
+.text
+  color: $c-black
+  text-align: center
+  letter-spacing: .05em
+
+.text
+  @include sp
+    margin-top: vw(50)
+    line-height: 2.3
+  @include pc
+    margin-top: 38px
+    line-height: 2.5
+
+.img
+  position: absolute
+  bottom: 0
+  z-index: 1
+  &--mihiro
+    @extend .img
+    @include sp
+      width: vw(100)
+      left: 0
+    @include pc
+      width: 100px
+      left: -55px
+  &--yuto
+    @extend .img
+    @include sp
+      width: vw(106)
+      right: 0
+    @include pc
+      width: 106px
+      right: -25px
