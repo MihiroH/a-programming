@@ -1,0 +1,21 @@
+.wrapper
+  @include hoverOpacity
+  @include sp
+    border-radius: 3px
+  @include pc
+    border-radius: 6px
+
+.background
+  &--black
+    background-color: $c-black
+    color: $c-white
+  &--blue
+    background-color: $c-blue
+    color: $c-white
+
+.border
+  border-width: 1px
+  border-style: solid
+  &--neon_blue
+    @extend .border
+    border-color: $c-neon-blue

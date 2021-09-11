@@ -2,6 +2,7 @@
 
 // Color
 $c-blue: #53c0f0
+$c-neon-blue: #8be2e2
 $c-dark-blue: #edf2f7
 $c-light-blue: #e6f2ff // For retina display.
 
@@ -33,3 +34,12 @@ $pc-min-width: 1000
 @mixin pc
   @media screen and (min-width: #{$pc-size}px)
     @content
+
+// Utils
+@mixin hoverOpacity
+  &:active
+    @include sp
+      opacity: .8
+  &:hover
+    @include pc
+      opacity: .8
