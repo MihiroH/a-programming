@@ -5,7 +5,11 @@ import ImageMihiro from '@/public/images/img_mihiro.png'
 import ImageYuto from '@/public/images/img_yuto.png'
 import styles from '@/styles/Message.module.sass'
 
-const Message: React.VFC = () => {
+type Props = {
+  className?: string
+}
+
+const Message: React.VFC<Props> = ({ className }) => {
   const strongPoints = [
     '大丈夫です。',
     '現役エンジニア',
@@ -27,7 +31,7 @@ const Message: React.VFC = () => {
   }, [])
 
   return (
-    <section className={styles.wrapper}>
+    <section className={[styles.wrapper, className].join(' ')}>
       <BaseTitle
         level="2"
         weight="m"
