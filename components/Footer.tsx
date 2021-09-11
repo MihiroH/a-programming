@@ -41,9 +41,14 @@ const Footer: React.VFC = () => {
   return (
     <footer className={styles.footer}>
       <ul>{content}</ul>
-      <small className={styles.copyright}>
-        &#x000A9; 2021 a-programming All Right Reserved.
-      </small>
+      <BaseText
+        tagName="small"
+        className={styles.copyright}
+        sizePc={12}
+        sizeSp={20}
+      >
+        &copy; 2021 a-programming All Right Reserved.
+      </BaseText>
     </footer>
   )
 }
