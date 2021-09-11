@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Message from '@/components/Message'
+import QuestionAndAnswer from '@/components/QuestionAndAnswer'
 import styles from '@/styles/Top.module.sass'
 
 const Top: React.VFC = () => {
@@ -11,6 +12,7 @@ const Top: React.VFC = () => {
       </Head>
 
       <Message className={styles.message} />
+      <QuestionAndAnswer className={styles.q_and_a} />
     </>
   )
 }
