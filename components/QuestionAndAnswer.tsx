@@ -147,7 +147,7 @@ const QuestionAndAnswer: React.VFC<Props> = ({ className }) => {
   return (
     <div className={[styles.wrapper, className].join(' ')}>
       <BaseTitle
-        level="2"
+        level={2}
         face="ja"
         weight="m"
         sizeSp={36}
@@ -169,7 +169,7 @@ const QuestionAndAnswer: React.VFC<Props> = ({ className }) => {
               ].join(' ')}
               onClick={() => toggleDisplay(index)}
             ></div>
-            <BaseTitle level="3" face="ja" weight="b" sizeSp={20} sizePc={16}>
+            <BaseTitle level={3} face="ja" weight="b" sizeSp={20} sizePc={16}>
               Q. {item.question.title}
             </BaseTitle>
             <div
@@ -178,7 +178,7 @@ const QuestionAndAnswer: React.VFC<Props> = ({ className }) => {
                 visibleList.includes(index) ? `${styles['is-active']}` : '',
               ].join(' ')}
             >
-              <BaseTitle level="3" face="ja" weight="b" sizeSp={20} sizePc={16}>
+              <BaseTitle level={3} face="ja" weight="b" sizeSp={20} sizePc={16}>
                 A. {item.answer.title}
               </BaseTitle>
               <div className={styles.item_desc}>
@@ -192,7 +192,7 @@ const QuestionAndAnswer: React.VFC<Props> = ({ className }) => {
                     item.answer.children.map((child, j) => (
                       <li key={j}>
                         <BaseTitle
-                          level="4"
+                          level={4}
                           face="ja"
                           weight="b"
                           sizeSp={20}

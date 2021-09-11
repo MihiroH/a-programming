@@ -10,7 +10,7 @@ const Lead: React.VFC<Props> = ({ className }) => {
   return (
     <div className={className}>
       <BaseTitle
-        level="2"
+        level={2}
         weight="m"
         sizeSp={36}
         sizePc={36}

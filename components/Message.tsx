@@ -33,7 +33,7 @@ const Message: React.VFC<Props> = ({ className }) => {
   return (
     <section className={[styles.wrapper, className].join(' ')}>
       <BaseTitle
-        level="2"
+        level={2}
         weight="m"
         sizeSp={36}
         sizePc={36}
