@@ -2,7 +2,7 @@ import Link from 'next/link'
 import BaseText from '@/components/BaseText'
 import styles from '@/styles/Footer.module.sass'
 
-const contentsArray = [
+const menuList = [
   {
     name: 'プライバシーポリシー',
     href: '/',
@@ -25,11 +25,11 @@ const contentsArray = [
   },
 ]
 
-const content = contentsArray.map((item, i) => (
+const listEl = menuList.map((item, i) => (
   <li key={i} className={styles.item}>
     <Link href={item.href}>
       <a>
-        <BaseText sizePc={14} sizeSp={20}>
+        <BaseText sizeSp={20} sizePc={14}>
           {item.name}
         </BaseText>
       </a>
@@ -40,12 +40,12 @@ const content = contentsArray.map((item, i) => (
 const Footer: React.VFC = () => {
   return (
     <footer className={styles.footer}>
-      <ul>{content}</ul>
+      <ul>{listEl}</ul>
       <BaseText
         tagName="small"
         className={styles.copyright}
-        sizePc={12}
         sizeSp={20}
+        sizePc={12}
       >
         &copy; 2021 a-programming All Right Reserved.
       </BaseText>
