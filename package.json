@@ -15,7 +15,7 @@
   "lint-staged": {
     "./**/*.{js,jsx,ts,tsx}": [
       "bash -c 'npm run lint:fix'",
-      "bash -c 'tsc --project ./tsconfig.json && next lint'"
+      "bash -c 'npm run lint'"
     ]
   },
   "dependencies": {
