@@ -35,6 +35,11 @@ $pc-min-width: 1000
   @media screen and (min-width: #{$pc-size}px)
     @content
 
+// Non-Retina
+@mixin nonRetina
+  @media screen and (-webkit-max-device-pixel-ratio: 1)
+    @content
+
 // Utils
 @mixin hoverOpacity
   &:active
