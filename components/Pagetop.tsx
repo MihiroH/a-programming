@@ -1,48 +1,37 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import BaseText from '@/components/BaseText'
+import Arrowup from '@/public/images/icon_arrow_up.svg'
 import styles from '@/styles/Pagetop.module.sass'
 
 const Pagetop: React.VFC = () => {
-  const [isDisplay, setIsDisplay] = useState(false)
+  const [isVisible, setIsVisible] = useState(false)
   const [isSp, setIsSp] = useState(false)
 
-  const displayPosition: number = isSp ? 300 : 500
+  const displayPosition = isSp ? 300 : 500
 
   useEffect(() => {
-    if (window.matchMedia('(max-width: 768px)').matches) {
-      setIsSp(true)
-    } else {
-      setIsSp(false)
-    }
+    setIsSp(window.matchMedia('(max-width: 768px)').matches)
+
     window.addEventListener('scroll', () => {
-      if (window.scrollY >= displayPosition) {
-        setIsDisplay(true)
-      } else {
-        setIsDisplay(false)
-      }
+      setIsVisible(window.scrollY >= displayPosition)
     })
-  }, [setIsSp, setIsDisplay, displayPosition])
+  }, [setIsSp, setIsVisible, displayPosition])
 
   return (
     <Link href="/">
       <a
-        style={{
-          transition: 'opacity 1s',
-          opacity: isDisplay ? 1 : 0,
-          visibility: isDisplay ? 'visible' : 'hidden',
-        }}
-        className={styles.pageTop}
+        className={[
+          styles['wrapper'],
+          isVisible ? styles['is-visible'] : '',
+        ].join(' ')}
       >
         <div className={styles.icon}>
-          <Image
-            src="/images/icn_pagetop.svg"
-            alt="PageTop"
-            width={34}
-            height={19}
-          />
+          <Arrowup />
         </div>
-        <span className={styles.text}>ページトップ</span>
+        <BaseText className={styles.text} sizeSp={21} sizePc={10}>
+          ページトップ
+        </BaseText>
       </a>
     </Link>
   )

@@ -1,26 +1,32 @@
-.pageTop
+.wrapper
   display: flex
   align-items: center
   flex-direction: column
   position: fixed
   bottom: 20px
   right: 30px
+  visibility: hidden
+  opacity: 0
+  transition: visibility 1s, opacity 1s
   @include sp
     bottom: vw(30)
     right: vw(20)
 
 .icon
-  width: 27px
   @include sp
     width: vw(33.68)
+  @include pc
+    width: 27px
   svg
     width: 100%
     height: auto
 
 .text
-  font-size: 10px
   margin-top: 4px
   font-weight: 500
   @include sp
-    font-size: vw(21)
     margin-top: vw(4.7)
+
+.is-visible
+  visibility: visible
+  opacity: 1
