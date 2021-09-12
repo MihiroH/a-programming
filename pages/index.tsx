@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Footer from '@/components/Footer'
 import Lead from '@/components/Lead'
 import Message from '@/components/Message'
 import QuestionAndAnswer from '@/components/QuestionAndAnswer'
@@ -15,6 +16,8 @@ const Top: React.VFC = () => {
       <Lead className={styles.lead} />
       <Message className={styles.message} />
       <QuestionAndAnswer className={styles.q_and_a} />
+
+      <Footer className={styles.footer} />
     </>
   )
 }
