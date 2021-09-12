@@ -18,22 +18,27 @@ const Pagetop: React.VFC = () => {
     })
   }, [setIsSp, setIsVisible, displayPosition])
 
+  const toTop = () => {
+    window.scroll({ top: 0, behavior: 'smooth' })
+  }
+
   return (
-    <Link href="/">
-      <a
-        className={[
-          styles['wrapper'],
-          isVisible ? styles['is-visible'] : '',
-        ].join(' ')}
-      >
-        <div className={styles.icon}>
-          <Arrowup />
-        </div>
-        <BaseText className={styles.text} sizeSp={21} sizePc={10}>
-          ページトップ
-        </BaseText>
-      </a>
-    </Link>
+    <div
+      role="link"
+      aria-label="Move to top of this page"
+      className={[
+        styles['wrapper'],
+        isVisible ? styles['is-visible'] : '',
+      ].join(' ')}
+      onClick={toTop}
+    >
+      <span className={styles.icon}>
+        <Arrowup />
+      </span>
+      <BaseText className={styles.text} sizeSp={20} sizePc={10}>
+        ページトップ
+      </BaseText>
+    </div>
   )
 }
 
