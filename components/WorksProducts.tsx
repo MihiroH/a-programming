@@ -23,7 +23,7 @@ const WorksProducts: React.VFC<Props> = memo(({ className, products }) => {
         <ul className={styles.list}>
           {products.map((product, index) => (
             <li key={index} className={styles.item}>
-              <a href={product.url}>
+              <a href={product.url} target="_blank" rel="noreferrer noopener">
                 <div>
                   <Image
                     src={`/images/${product.image_name}`}
