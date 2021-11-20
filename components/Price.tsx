@@ -116,7 +116,7 @@ const Price: React.VFC<Props> = ({ className }) => {
                 </BaseText>
               </div>
               <BaseLinkButton
-                href="//:example.com"
+                href="//example.com"
                 backgroundColor="blue"
                 className={styles.item_btn}
               >
@@ -162,7 +162,7 @@ const Price: React.VFC<Props> = ({ className }) => {
           </BaseText>
         </BaseText>
         <BaseLinkButton
-          href="//:example.com"
+          href="//example.com"
           backgroundColor="blue"
           className={styles.contact_btn}
         >
