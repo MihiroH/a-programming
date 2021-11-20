@@ -36,8 +36,7 @@ const Pagetop: React.VFC<Props> = ({ disabledElement }) => {
       const scrollY = window.pageYOffset
       setIsVisible(scrollY >= displayPosition)
 
-      console.log(scrollY + screenHeight >= elTop + bottom)
-      if (scrollY + screenHeight >= elTop + bottom) {
+      if (scrollY + screenHeight >= elTop) {
         setPagetopPosition({
           bottom: `${scrollY + screenHeight - elTop + bottom}px`,
           right: `${right}px`,
