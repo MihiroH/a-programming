@@ -145,7 +145,7 @@ const QuestionAndAnswer: React.VFC<Props> = ({ className }) => {
   }
 
   return (
-    <div className={[styles.wrapper, className].join(' ')}>
+    <section className={[styles.wrapper, className].join(' ')}>
       <BaseTitle
         level={2}
         face="ja"
@@ -213,7 +213,7 @@ const QuestionAndAnswer: React.VFC<Props> = ({ className }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   )
 }
 
