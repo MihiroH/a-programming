@@ -19,7 +19,7 @@ const Top: React.VFC = () => {
       <QuestionAndAnswer className={styles.q_and_a} />
 
       <Footer className={styles.footer} />
-      <Pagetop />
+      <Pagetop disabledElement="#gFooter" />
     </>
   )
 }
