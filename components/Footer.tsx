@@ -52,7 +52,7 @@ const Footer: React.VFC<Props> = ({ className }) => {
   ))
 
   return (
-    <footer className={[styles.footer, className].join(' ')}>
+    <footer id="gFooter" className={[styles.footer, className].join(' ')}>
       <nav>
         <ul>{listEls}</ul>
       </nav>

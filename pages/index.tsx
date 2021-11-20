@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Footer from '@/components/Footer'
 import Lead from '@/components/Lead'
 import Message from '@/components/Message'
+import Pagetop from '@/components/Pagetop'
 import QuestionAndAnswer from '@/components/QuestionAndAnswer'
 import Works from '@/components/Works'
 import styles from '@/styles/Top.module.sass'
@@ -20,6 +21,7 @@ const Top: React.VFC = () => {
       <QuestionAndAnswer className={styles.q_and_a} />
 
       <Footer className={styles.footer} />
+      <Pagetop disabledElement="#gFooter" />
     </>
   )
 }
