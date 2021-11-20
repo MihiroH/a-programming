@@ -91,6 +91,8 @@ svg
 body
   background: $c-light-blue
   color: $c-black
+  @include pc
+    min-width: #{$pc-min-width}px
   @include nonRetina
     background: $c-dark-blue
 

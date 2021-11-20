@@ -1,0 +1,49 @@
+.wrapper
+  overflow: auto
+  @include sp
+    padding-bottom: vw(20)
+  @include pc
+    padding-bottom: 20px
+
+.inner
+  @include sp
+    display: table
+    padding-right: vw(20)
+
+.list
+  display: grid
+  grid-template-rows: auto auto
+  grid-auto-flow: column
+  @include sp
+    grid-template-columns: repeat(auto-fill, vw(317))
+    grid-auto-columns: minmax(vw(317), 1fr)
+    grid-gap: vw(20)
+  @include pc
+    grid-template-columns: repeat(auto-fill, 256px)
+    grid-auto-columns: minmax(256px, 1fr)
+    grid-gap: 20px
+
+.item
+  @include hoverOpacity()
+  overflow: hidden
+  font-size: 0
+  @include sp
+    border-radius: 3px
+  @include pc
+    border-radius: 6px
+  &_label
+    background: $c-pure-white
+    @include sp
+      padding: vw(16) vw(16) vw(15)
+    @include pc
+      padding: 12px 12px 10px
+  &_categories
+    @include pc
+      display: flex
+  &_category
+    display: block
+    &:not(:first-child)
+      @include sp
+        margin-top: vw(10)
+      @include pc
+        margin-left: 12px

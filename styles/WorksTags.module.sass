@@ -1,0 +1,24 @@
+.list
+  background: $c-pure-white
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  @include sp
+    padding: vw(16)
+    border-radius: 3px
+  @include pc
+    padding: 12px 16px
+    border-radius: 6px
+
+.item
+  @include hoverOpacity()
+  @include sp
+    margin-right: vw(12)
+    padding: vw(12)
+  @include pc
+    margin-right: 8px
+    padding: 8px
+  &:hover
+    cursor: pointer
+  &.is-active
+    color: $c-blue
