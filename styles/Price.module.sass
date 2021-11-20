@@ -1,0 +1,135 @@
+.wrapper
+  letter-spacing: .05em
+  @include sp
+    width: vw(660)
+  @include pc
+    width: 936px
+
+.title
+  text-align: center
+  letter-spacing: .05em
+
+.list
+  display: flex
+  align-items: stretch
+  justify-content: space-between
+  margin-right: auto
+  margin-left: auto
+  @include sp
+    flex-wrap: wrap
+    margin-top: vw(34)
+    padding-top: vw(40)
+  @include pc
+    margin-top: 10px
+    padding-top: 28px
+
+.item
+  position: relative
+  z-index: 1
+  @include sp
+    width: vw(300)
+    &:nth-child(n+3)
+      margin-top: vw(60)
+  @include pc
+    width: 219px
+  &_head
+    background: $c-blue
+    color: $c-white
+    text-align: center
+    @include sp
+      padding: vw(22) 0
+      border-radius: 3px 3px 0 0
+    @include pc
+      padding: 17px 0
+      border-radius: 6px 6px 0 0
+  &_recommended
+    position: absolute
+    z-index: 1
+    display: block
+    background: $c-orange
+    color: $c-pure-white
+    text-align: center
+    transform: rotate(339deg)
+    @include sp
+      top: vw(24 * -1)
+      left: vw(24 * -1)
+      padding: vw(13) 0 vw(11)
+      border-radius: 3px
+      width: vw(97)
+    @include pc
+      top: -18px
+      left: -16px
+      padding: 8px 0 7px
+      border-radius: 6px
+      width: 57px
+  &_body
+    background: $c-pure-white
+    text-align: center
+    @include sp
+      padding: vw(16) vw(20) vw(24)
+      border-radius: 0 0 3px 3px
+    @include pc
+      padding: 12px 20px 24px
+      border-radius: 0 0 6px 6px
+  &_text
+    line-height: 1.44
+  &_period
+    display: block
+    @include sp
+      margin-top: vw(32)
+    @include pc
+      margin-top: 25px
+  &_price
+    @include sp
+      margin-top: vw(25)
+    @include pc
+      margin-top: 25px
+    &_unit
+      @include sp
+        margin-left: vw(10)
+      @include pc
+        margin-left: 5px
+  &_btn
+    display: block
+    margin-right: auto
+    margin-left: auto
+    @include sp
+      margin-top: vw(35)
+      padding: vw(16) 0 vw(17)
+      width: vw(248)
+    @include pc
+      margin-top: 32px
+      padding: 12px 0
+      width: 160px
+
+.contact
+  text-align: center
+  @include sp
+    margin-top: vw(64)
+  @include pc
+    margin-top: 56px
+  &_text
+    line-height: 1.8
+    @include sp
+      margin-top: vw(25)
+    @include pc
+      margin-top: 25px
+  &_attention
+    display: block
+    line-height: 2
+    @include sp
+      margin-top: vw(24)
+    @include pc
+      margin-top: 16px
+  &_btn
+    display: block
+    margin-right: auto
+    margin-left: auto
+    @include sp
+      margin-top: vw(36)
+      padding: vw(20) 0 vw(19)
+      width: vw(265)
+    @include pc
+      margin-top: 40px
+      padding: 20px 0 19px
+      width: 265px

@@ -3,6 +3,7 @@ import Footer from '@/components/Footer'
 import Lead from '@/components/Lead'
 import Message from '@/components/Message'
 import Pagetop from '@/components/Pagetop'
+import Price from '@/components/Price'
 import QuestionAndAnswer from '@/components/QuestionAndAnswer'
 import Works from '@/components/Works'
 import styles from '@/styles/Top.module.sass'
@@ -18,6 +19,7 @@ const Top: React.VFC = () => {
       <Lead className={styles.lead} />
       <Works className={styles.works} />
       <Message className={styles.message} />
+      <Price className={styles.price} />
       <QuestionAndAnswer className={styles.q_and_a} />
 
       <Footer className={styles.footer} />
