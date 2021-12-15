@@ -1,0 +1,15 @@
+.text
+  opacity: 0
+  display: inline-block
+  max-width: 100%
+  margin: auto
+  white-space: nowrap
+  overflow: hidden
+  border-right: solid 3px rgba($c-neon_blue, .75)
+  animation: blink 500ms linear infinite alternate
+
+@keyframes blink
+  0%
+    border-right-color: transparent
+  100%
+    border-right-color: rgba($c-neon_blue, .75)

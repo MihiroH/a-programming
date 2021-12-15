@@ -1,0 +1,180 @@
+.wrapper
+  position: relative
+  z-index: 1
+  width: 100%
+  height: 100vh
+
+.inner
+  position: absolute
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+  width: 100%
+  height: 100%
+  video
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.content
+  position: absolute
+  left: 0
+  right: 0
+  margin: auto
+  z-index: 1
+  background: $c-black
+  color: $c-white
+  @include sp
+    top: vw(160)
+    width: vw(730)
+    border-radius: 3px
+    padding: vw(88) 0 vw(18)
+  @include pc
+    top: 133px
+    width: 929px
+    border-radius: 6px
+    padding: 57px 0 20px
+
+.title
+  text-align: center
+
+.body
+  display: table
+  margin-right: auto
+  margin-left: auto
+  @include sp
+    margin-top: vw(56)
+  @include pc
+    margin-top: 44px
+
+.label
+  text-align: center
+  @include pc
+    margin-bottom: 16px
+
+.input_box
+  display: flex
+  align-items: stretch
+  input:-webkit-autofill
+    -webkit-text-fill-color: $c-white
+    -webkit-box-shadow: 0 0 0px 1000px $c-black inset
+
+.input
+  border: 1px solid $c-neon-blue
+  background: transparent
+  color: $c-white
+  @include sp
+    font-size: vw(32)
+    padding: vw(14) vw(8) vw(12) vw(24)
+    border-radius: 3px
+    width: vw(381)
+  @include pc
+    padding: 10px 7px 8px 12px
+    border-radius: 6px
+    width: 252px
+    font-size: 16px
+  &::placeholder
+    color: $c-gray
+    @include sp
+      font-size: vw(32)
+    @include pc
+      font-size: 16px
+  &:focus
+    outline: none
+
+.btn
+  @include sp
+    width: vw(141)
+    padding: vw(11) 0
+    margin-left: vw(20)
+  @include pc
+    width: 95px
+    padding: 9px 0 8px
+    margin-left: 20px
+
+.attention
+  display: flex
+  align-items: center
+  @include sp
+    margin-top: vw(16)
+  @include pc
+    margin-top: 8px
+  &:hover
+    cursor: pointer
+  &_text
+    color: $c-gray
+  &_icon
+    @include sp
+      margin-left: vw(16)
+      width: vw(26)
+    @include pc
+      margin-left: 8px
+      width: 14px
+    svg
+      display: block
+
+.greeting
+  text-align: center
+  margin-right: auto
+  margin-left: auto
+  word-break: break-all
+  line-height: 1.4
+  @include sp
+    margin-top: vw(69)
+    max-width: vw(545)
+  @include pc
+    margin-top: 28px
+    width: 367px
+  &_text
+    display: block
+    & + &
+      @include sp
+        margin-top: vw(24)
+      @include pc
+        margin-top: 24px
+
+.scroll
+  @include hoverOpacity()
+  display: table
+  margin-right: auto
+  margin-left: auto
+  @include sp
+    margin-top: vw(147)
+    padding: 12px 19px 12px 14px
+  @include pc
+    margin-top: 56px
+    padding: 11px 11px 11px 14px
+  &:hover
+    cursor: pointer
+  &_arrow
+    display: inline-block
+    transform: rotate(90deg)
+  &_text
+    @include sp
+      margin-left: vw(6)
+    @include pc
+      margin-left: 6px
+
+.img
+  position: absolute
+  bottom: 0
+  z-index: 1
+  &--mihiro
+    @extend .img
+    @include sp
+      width: vw(190)
+      left: vw(16)
+    @include pc
+      width: 212px
+      left: 32px
+  &--yuto
+    @extend .img
+    @include sp
+      width: vw(191)
+      right: vw(18)
+    @include pc
+      width: 225px
+      right: 26px
+  > *
+    vertical-align: bottom
