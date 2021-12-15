@@ -89,7 +89,7 @@ const MainVisual: React.VFC<Props> = ({ className }) => {
                 </BaseText>
               </BaseButton>
             </div>
-            <div className={styles.attention} onClick={() => alert('clicked')}>
+            <div className={styles.attention}>
               <BaseText
                 sizeSp={20}
                 sizePc={10}
@@ -97,9 +97,9 @@ const MainVisual: React.VFC<Props> = ({ className }) => {
               >
                 ※この情報が保存されることはありません
               </BaseText>
-              <div className={styles.attention_icon}>
+              {/*<div className={styles.attention_icon}>
                 <IconQuestion />
-              </div>
+              </div>*/}
             </div>
             <div className={styles.greeting}>
               <div>
