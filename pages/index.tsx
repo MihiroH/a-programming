@@ -6,6 +6,7 @@ import Message from '@/components/Message'
 import Pagetop from '@/components/Pagetop'
 import Price from '@/components/Price'
 import QuestionAndAnswer from '@/components/QuestionAndAnswer'
+import Sample from '@/components/Sample'
 import Works from '@/components/Works'
 import styles from '@/styles/Top.module.sass'
 
@@ -19,6 +20,7 @@ const Top: React.VFC = () => {
 
       <MainVisual className={styles.main_visual} />
       <Lead className={styles.lead} />
+      <Sample className={styles.sample} />
       <Works className={styles.works} />
       <Message className={styles.message} />
       <Price className={styles.price} />

@@ -1,0 +1,233 @@
+.tabs
+  position: relative
+  z-index: 1
+  display: flex
+  align-items: center
+  &::before,
+  &::after
+    content: ''
+    display: block
+    position: absolute
+    right: 0
+    left: 0
+    z-index: -1
+    width: 90%
+    height: 50%
+    margin: auto
+  &::before
+    top: 0
+    background-color: $c-gray
+    overflow: hidden
+    @include sp
+      border-radius: 3px
+    @include pc
+      border-radius: 6px
+  &::after
+    bottom: 0
+    background-color: $c-black
+
+.tab
+  background-color: $c-gray
+  color: $c-white
+  text-align: center
+  transition: color .3s
+  width: calc(100% / 3)
+  @include sp
+    padding: vw(7) 0
+  @include pc
+    padding: 10px 0
+  &:active
+    @include sp
+      background-color: $c-black
+  &:first-child,
+  &:last-child
+    @include sp
+      border-radius: 3px 3px 0 0
+    @include pc
+      border-radius: 6px 6px 0 0
+  & + &
+    position: relative
+    z-index: 1
+    &::before
+      content: ''
+      display: block
+      position: absolute
+      top: 50%
+      left: 0
+      z-index: -1
+      transform: translateY(-50%)
+      width: 1px
+      margin: auto
+      background-color: $c-white
+      @include sp
+        height: 38.5%
+      @include pc
+        height: 100%
+  &.prev
+    @include sp
+      border-bottom-right-radius: 3px
+  &.active
+    @include sp
+      background-color: $c-black
+      border-radius: 3px 3px 0 0
+    &::before
+      @include sp
+        display: none
+    & + .tab
+      @include sp
+        border-bottom-left-radius: 3px
+      &::before
+        @include sp
+          display: none
+
+.code_area_wrapper
+  display: flex
+  align-items: stretch
+  overflow: hidden
+  @include sp
+    border-radius: 0 0 3px 3px
+  @include pc
+    border-radius: 0 0 6px 6px
+
+.code_area
+  background-color: $c-black
+  color: $c-white
+  line-height: 1.5
+  @include sp
+    width: 100%
+    padding: vw(16)
+  @include pc
+    width: calc(100% / 3)
+    height: 468px
+    padding: 18px
+  &::after
+    font-family: 'Fira Code', monospace
+    content: '|'
+    animation: blink 500ms linear infinite alternate
+    @include sp
+      font-size: vw(10)
+    @include pc
+      font-size: 14px
+  &.html
+    @include sp
+      height: vw(430)
+  &.css
+    @include sp
+      height: vw(900)
+  &.js
+    @include sp
+      height: vw(530)
+  & + &
+    @include pc
+      border-left: 1px solid $c-pure-white
+
+.blue
+  color: $c-blue
+.red
+  color: $c-red
+.green
+  color: $c-green
+.purple
+  color: $c-purple
+.orange
+  color: $c-orange
+.gray
+  color: $c-gray
+
+.arrow_box
+  display: flex
+  justify-content: center
+  @include sp
+    margin-top: vw(36)
+    padding-bottom: vw(40)
+  @include pc
+    margin-top: 36px
+    padding-bottom: 40px
+
+.arrow_bottom
+  position: relative
+  z-index: 1
+  background-color: rgba($c-gray, .5)
+  @include sp
+    width: vw(39)
+    height: vw(26)
+    margin: 0 vw(60)
+  @include pc
+    width: 39px
+    height: 26px
+    margin: 0 60px
+  &::after
+    content: ''
+    display: block
+    position: absolute
+    top: 100%
+    left: 50%
+    width: 0
+    height: 0
+    transform: translateX(-50%)
+    @include sp
+      border: vw(52) solid transparent
+      border-top: vw(40) solid rgba($c-gray, .5)
+    @include pc
+      border: 52px solid transparent
+      border-top: 40px solid rgba($c-gray, .5)
+
+.result
+  border-bottom: 1px solid $c-gray
+  border-left: 1px solid $c-gray
+  @include sp
+    margin-top: 18px
+  @include pc
+    margin-top: 36px
+  &_item
+    display: flex
+    align-items: stretch
+  &_item_head
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center
+    background-color: $c-black
+    color: $c-white
+    border-top: 1px solid $c-gray
+    border-right: 1px solid $c-gray
+    @include sp
+      width: vw(290)
+      flex-shrink: 0
+      padding: vw(12)
+    @include pc
+      width: 374px
+      padding: 24px
+  &_item_body
+    border-top: 1px solid $c-gray
+    border-right: 1px solid $c-gray
+    flex-grow: 1
+    background-color: $c-pure-white
+    @include sp
+      padding: vw(12)
+    @include pc
+      padding: 24px 24px 24px 36px
+  &_item_attention
+    display: block
+    margin-top: 10px
+  .greeting
+    line-height: 1.5
+    margin: 0
+    padding: 0
+  .btn
+    appearance: none
+    background-color: $c-blue
+    color: $c-white
+    border-radius: 6px
+    font-size: 14px
+    margin: 16px 0 0
+    padding: 8px 23px
+  button:not(.btn)
+    padding: 1px 6px
+    border: 1px solid rgb(118, 118, 118)
+
+@keyframes blink
+  0%
+    opacity: 0
+  100%
+    opacity: 1

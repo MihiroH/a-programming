@@ -120,7 +120,7 @@ const Works: React.VFC<Props> = ({ className }) => {
   }
 
   return (
-    <section className={[styles.wrapper, className].join(' ')}>
+    <section className={className}>
       <div className={styles.banner}>
         <div className="sp">
           <Image
