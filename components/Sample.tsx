@@ -548,6 +548,13 @@ const Sample: React.VFC<Props> = ({ className }) => {
           </div>
         </div>
       </div>
+      <BaseText tagName="p" sizeSp={20} sizePc={18} className={styles.text}>
+        最初は誰でも初心者です。
+        <br />
+        上の内容がわからなくても大丈夫です。
+        <br />
+        ここで学べば自然と頭に入ってきます。
+      </BaseText>
     </div>
   )
 }
