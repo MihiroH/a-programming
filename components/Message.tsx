@@ -1,6 +1,8 @@
 import Image from 'next/image'
+import { useContext } from 'react'
 import BaseText from '@/components/BaseText'
 import BaseTitle from '@/components/BaseTitle'
+import { NicknameContext } from '@/contexts/index'
 import ImageMihiro from '@/public/images/img_mihiro.png'
 import ImageYuto from '@/public/images/img_yuto.png'
 import styles from '@/styles/Message.module.sass'
@@ -10,12 +12,13 @@ type Props = {
 }
 
 const Message: React.VFC<Props> = ({ className }) => {
+  const nickname = useContext(NicknameContext)
   const strongPoints = [
     '大丈夫です。',
     '現役エンジニア',
     '2対1体制',
     '完全オンライン型',
-    '太郎さんのペースで進める',
+    `${nickname}さんのペースで進める`,
   ]
 
   const strongPointsEls = strongPoints.reduce((all: JSX.Element[], text) => {
@@ -48,7 +51,8 @@ const Message: React.VFC<Props> = ({ className }) => {
         <br />
         {strongPointsEls[0]}
         <br />
-        本サイトを制作した僕たち{strongPointsEls[1]}が太郎さんをサポートします。
+        本サイトを制作した僕たち{strongPointsEls[1]}が{nickname}
+        さんをサポートします。
         <br />
         {strongPointsEls[2]}かつ{strongPointsEls[3]}なので、
         <br className="sp" />

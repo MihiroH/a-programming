@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import BaseText from '@/components/BaseText'
 import BaseTitle from '@/components/BaseTitle'
+import { NicknameContext } from '@/contexts/index'
 import styles from '@/styles/QuestionAndAnswer.module.sass'
 
 type Props = {
@@ -8,6 +9,7 @@ type Props = {
 }
 
 const QuestionAndAnswer: React.VFC<Props> = ({ className }) => {
+  const nickname = useContext(NicknameContext)
   const list = [
     {
       question: {
@@ -35,7 +37,7 @@ const QuestionAndAnswer: React.VFC<Props> = ({ className }) => {
           <br />
           しかも学習コストは他の言語に比べて比較的低めと言われています。
           <br />
-          太郎さん、プログラミングの世界へようこそ！！
+          ${nickname}さん、プログラミングの世界へようこそ！！
         `,
       },
     },
@@ -85,7 +87,7 @@ const QuestionAndAnswer: React.VFC<Props> = ({ className }) => {
         title: '学習方法は？',
       },
       answer: {
-        title: '太郎さんにあった学習方法で進めます。',
+        title: `${nickname}さんにあった学習方法で進めます。`,
         desc: `
           ・基礎をしっかり固めてから応用に入りたい方
           <br />
@@ -97,7 +99,7 @@ const QuestionAndAnswer: React.VFC<Props> = ({ className }) => {
           <br />
           ・チーム開発をしてみたい方
           <br />
-          など様々な方法や進め方があると思います。太郎さんにあった方法で進めます。
+          など様々な方法や進め方があると思います。${nickname}さんにあった方法で進めます。
           <br />
           ぜひ一度<a href="https://example.com">お問い合わせ</a>ください。
         `,

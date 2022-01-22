@@ -1,5 +1,7 @@
+import { useContext } from 'react'
 import BaseText from '@/components/BaseText'
 import BaseTitle from '@/components/BaseTitle'
+import { NicknameContext } from '@/contexts/index'
 import styles from '@/styles/Lead.module.sass'
 
 type Props = {
@@ -7,6 +9,8 @@ type Props = {
 }
 
 const Lead: React.VFC<Props> = ({ className }) => {
+  const nickname = useContext(NicknameContext)
+
   return (
     <div className={className}>
       <BaseTitle
@@ -34,7 +38,7 @@ const Lead: React.VFC<Props> = ({ className }) => {
           <br />
           WebサイトやWebアプリケーションを作りたいですか？
           <br />
-          そんな太郎さんのためのスクールです！
+          そんな{nickname}さんのためのスクールです！
           <br />
           ここではHTML・CSS・JavaScriptが学べます！！
         </BaseText>

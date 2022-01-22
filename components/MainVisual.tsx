@@ -1,8 +1,9 @@
 import Image from 'next/image'
-import { useState, useRef, useCallback } from 'react'
+import { useState, useContext, useRef, useCallback } from 'react'
 import BaseButton from '@/components/BaseButton'
 import BaseText from '@/components/BaseText'
 import BaseTextAnimation from '@/components/BaseTextAnimation'
+import { NicknameContext } from '@/contexts/index'
 import IconQuestion from '@/public/images/icon_question.svg'
 import ImageMihiro from '@/public/images/img_mihiro.png'
 import ImageYuto from '@/public/images/img_yuto.png'
@@ -10,24 +11,25 @@ import styles from '@/styles/MainVisual.module.sass'
 
 type Props = {
   className?: string
+  updateNickname: (nickname: string) => void
 }
 
-const MainVisual: React.VFC<Props> = ({ className }) => {
-  const [name, setName] = useState('')
+const MainVisual: React.VFC<Props> = ({ className, updateNickname }) => {
+  const nickname = useContext(NicknameContext)
   const [animate, setAnimate] = useState(false)
   const [mvHeight, setMvHeight] = useState(0)
   const timerId = useRef<NodeJS.Timer | null>()
 
   const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
-    const name = e.currentTarget.value
-    setName(name)
+    const nickname = e.currentTarget.value
+    updateNickname(nickname)
 
     if (timerId.current) {
       clearTimeout(timerId.current)
     }
 
     timerId.current = setTimeout(() => {
-      setAnimate(!!name)
+      setAnimate(!!nickname)
     }, 200)
   }
 
@@ -59,7 +61,7 @@ const MainVisual: React.VFC<Props> = ({ className }) => {
             <BaseTextAnimation>Hello World!!</BaseTextAnimation>
           </BaseText>
           <div className={styles.body}>
-            <label htmlFor="name">
+            <label htmlFor="nickname">
               <BaseText
                 sizeSp={20}
                 sizePc={18}
@@ -70,8 +72,8 @@ const MainVisual: React.VFC<Props> = ({ className }) => {
             </label>
             <div className={styles.input_box}>
               <input
-                id="name"
-                name="name"
+                id="nickname"
+                name="nickname"
                 type="text"
                 placeholder="ニックネーム"
                 autoComplete="off"
@@ -109,7 +111,7 @@ const MainVisual: React.VFC<Props> = ({ className }) => {
                   className={styles.greeting_text}
                 >
                   <BaseTextAnimation animate={animate} order={1}>
-                    Hello {name}さん!
+                    Hello {nickname}さん!
                   </BaseTextAnimation>
                 </BaseText>
               </div>
