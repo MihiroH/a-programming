@@ -1,5 +1,13 @@
-import { useState, useMemo, useCallback, useEffect, useRef } from 'react'
+import {
+  useState,
+  useContext,
+  useMemo,
+  useCallback,
+  useEffect,
+  useRef,
+} from 'react'
 import BaseText from '@/components/BaseText'
+import { NicknameContext } from '@/contexts/index'
 import { useWindowMedia } from '@/hooks/useWindowMedia'
 import styles from '@/styles/Sample.module.sass'
 
@@ -8,6 +16,7 @@ type Props = {
 }
 
 const Sample: React.VFC<Props> = ({ className }) => {
+  const nickname = useContext(NicknameContext)
   const media = useWindowMedia()
   const [visibleLanguages, setVisibleLanguages] = useState<Array<string>>([])
   const [selectedTab, setSelectedTab] = useState('HTML')
@@ -288,11 +297,11 @@ const Sample: React.VFC<Props> = ({ className }) => {
               <span className={styles.green}>class</span>=
               <span className={styles.blue}>&quot;greeting&quot;</span>
               <span className={styles.gray}>&gt;</span>
-              {'\n  Hello 太郎さん!'}
+              {`\n  Hello ${nickname}さん!`}
               <span className={styles.gray}>&lt;</span>
               <span className={styles.red}>br /</span>
               <span className={styles.gray}>&gt;</span>
-              {'\n  太郎さんに会えて嬉しいです。\n'}
+              {`\n  ${nickname}さんに会えて嬉しいです。\n`}
               <span className={styles.gray}>&lt;/</span>
               <span className={styles.red}>p</span>
               <span className={styles.gray}>&gt;</span>
@@ -424,7 +433,7 @@ const Sample: React.VFC<Props> = ({ className }) => {
               <span className={styles.red}>&nbsp;&nbsp;&nbsp;&nbsp;alert</span>
               {'('}
               <span className={styles.green}>
-                &apos;ありがとう! 太郎さん&apos;
+                {`'ありがとう! ${nickname}さん'`}
               </span>
               {');\n  }\n};'}
             </code>
@@ -461,9 +470,9 @@ const Sample: React.VFC<Props> = ({ className }) => {
           </BaseText>
           <div className={styles.result_item_body}>
             <p>
-              Hello 太郎さん!
+              Hello {nickname}さん!
               <br />
-              太郎さんに会えて嬉しいです。
+              {nickname}さんに会えて嬉しいです。
             </p>
             <button type="button">Click me!</button>
           </div>
@@ -486,9 +495,9 @@ const Sample: React.VFC<Props> = ({ className }) => {
               sizePc={16}
               className={styles.greeting}
             >
-              Hello 太郎さん!
+              Hello {nickname}さん!
               <br />
-              太郎さんに会えて嬉しいです。
+              {nickname}さんに会えて嬉しいです。
             </BaseText>
             <button type="button" className={styles.btn}>
               Click me!
@@ -524,15 +533,15 @@ const Sample: React.VFC<Props> = ({ className }) => {
               sizePc={16}
               className={styles.greeting}
             >
-              Hello 太郎さん!
+              Hello {nickname}さん!
               <br />
-              太郎さんに会えて嬉しいです。
+              {nickname}さんに会えて嬉しいです。
             </BaseText>
             <button
               ref={resultLastEl}
               type="button"
               className={styles.btn}
-              onClick={() => alert('ありがとう! 太郎さん')}
+              onClick={() => alert(`ありがとう! ${nickname}さん`)}
             >
               Click me!
             </button>
